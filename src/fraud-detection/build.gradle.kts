@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import com.google.protobuf.gradle.*
 
 plugins {
-    kotlin("jvm") version "2.1.10"
+    kotlin("jvm") version "2.1.20"
     application
     id("java")
     id("idea")
@@ -16,7 +16,7 @@ version = "1.0"
 
 
 val grpcVersion = "1.71.0"
-val protobufVersion = "4.30.0"
+val protobufVersion = "4.30.2"
 
 
 repositories {
@@ -30,8 +30,8 @@ dependencies {
     implementation("com.google.protobuf:protobuf-java:${protobufVersion}")
     testImplementation(kotlin("test"))
     implementation(kotlin("script-runtime"))
-    implementation("org.apache.kafka:kafka-clients:3.9.0")
-    implementation("com.google.api.grpc:proto-google-common-protos:2.53.0")
+    implementation("org.apache.kafka:kafka-clients:4.0.0")
+    implementation("com.google.api.grpc:proto-google-common-protos:2.54.1")
     implementation("io.grpc:grpc-protobuf:${grpcVersion}")
     implementation("io.grpc:grpc-stub:${grpcVersion}")
     implementation("io.grpc:grpc-netty:${grpcVersion}")
@@ -42,8 +42,8 @@ dependencies {
     implementation("org.apache.logging.log4j:log4j-core:2.24.3")
     implementation("org.slf4j:slf4j-api:2.0.17")
     implementation("com.google.protobuf:protobuf-kotlin:${protobufVersion}")
-    implementation("dev.openfeature:sdk:1.14.1")
-    implementation("dev.openfeature.contrib.providers:flagd:0.11.6")
+    implementation("dev.openfeature:sdk:1.14.2")
+    implementation("dev.openfeature.contrib.providers:flagd:0.11.8")
 
     if (JavaVersion.current().isJava9Compatible) {
         // Workaround for @javax.annotation.Generated
